@@ -363,5 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # App settings files
-appsettings.json
-appsettings.*.json
+appsettings*.json
