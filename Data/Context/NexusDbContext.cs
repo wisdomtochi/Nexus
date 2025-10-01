@@ -10,21 +10,11 @@ namespace Nexus.Data.Context
             
         }
 
-        public virtual DbSet<ChatUser> ChatUsers { get; set; }
+        public virtual DbSet<UserAccount> UserAccounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<ChatUser>().HasData(
-                new ChatUser
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "System",
-                    Message = "Welcome to the chat!",
-                    UserId = "system",
-                    CreatedAt = DateTime.UtcNow
-                }
-            );
         }
     }
 }

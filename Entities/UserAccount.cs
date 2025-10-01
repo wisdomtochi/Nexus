@@ -3,15 +3,12 @@
 namespace Nexus.Entities
 {
     [Table(name: "chat_users")]
-    public class ChatUser
+    public class UserAccount
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Message { get; set; }
-        public Guid SenderId { get; set; }
-
-        [ForeignKey("SenderId")]
-        public ChatUser Sender { get; set; }
+        public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }
