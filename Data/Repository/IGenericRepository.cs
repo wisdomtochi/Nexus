@@ -1,4 +1,5 @@
-﻿namespace Nexus.Data.GenericRepository
+﻿
+namespace Nexus.Data.GenericRepository
 {
     public interface IGenericRepository<T> where T: class
     {
@@ -8,5 +9,6 @@
         void Update(Guid entityId, T entity);
         Task DeleteAsync(Guid entityId);
         Task<bool> SaveChangesAsync();
+        IQueryable<T> ReadAllQuery();
     }
 }

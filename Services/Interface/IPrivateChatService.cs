@@ -4,7 +4,8 @@ namespace Nexus.Services.Interface
 {
     public interface IPrivateChatService
     {
-        Task SendPrivateMessageAsync(Guid senderId, Guid receiverId, string message);
-        Task<List<Message>> GetMessageHistoryAsync(Guid senderId, Guid receiverId, int count);
+        Task SendMessageAsync(string sender, string receiver, string message);
+        Task<List<Message>> GetMessageHistoryAsync(string sender, string receiver, int count);
+        Task<string?> GetConnectionIdAsync(string userId);
     }
 }

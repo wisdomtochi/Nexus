@@ -6,7 +6,7 @@ namespace Nexus.Entities
     {
         public Guid Id { get; set; }
 
-        public Guid MemberId { get; set; }
+        public string MemberId { get; set; }
         [ForeignKey("MemberId")]
         public UserAccount Member { get; set; }
 

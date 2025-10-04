@@ -21,6 +21,11 @@ namespace Nexus.Data.GenericRepository
             await _table.AddAsync(entity);
         }
 
+        public IQueryable<T> ReadAllQuery()
+        {
+            return _table.AsQueryable();
+        }   
+
         public async Task<IEnumerable<T>> ReadAllAsync()
         {
             return await _table.ToListAsync();
